@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
+import 'theme.dart';
+import 'screens/login_screen.dart';
 
-class AppTheme {
-  static const Color primary = Color(0xFF002C54);
-  static const Color secondary = Color(0xFF00766C);
-  static const Color background = Color(0xFFF2ECE1);
-
-  static ThemeData themeData = ThemeData(
-    scaffoldBackgroundColor: background,
-    primaryColor: primary,
-    fontFamily: 'Montserrat',
-    inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
-    ),
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: primary,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
-    ),
-  );
+void main() {
+  runApp(const ShuttleIQApp());
 }
 
-      
+class ShuttleIQApp extends StatelessWidget {
+  const ShuttleIQApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'ShuttleIQ',
+      theme: AppTheme.themeData,
+      home: const LoginScreen(),
+    );
+  }
+}
